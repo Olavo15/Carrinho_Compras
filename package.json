@@ -1,0 +1,12 @@
+{
+  "name": "carrinho_compras",
+  "version": "1.0.0",
+  "description": "Criar Um carrinho de compras baseado no carrinho de compras da shopee, aonde o carrinho armazene itens e faça  o cálculo desub-itens automaticamente",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
