@@ -9,10 +9,16 @@ async function deleteItem(UserCart, name){
     }
 }
 
-async function removeItem(UserCart, index){}
+async function removeItem(UserCart, index){
+    const deleteIndex = index - 1;
+
+    if(index >= 0 && index < UserCart.length){
+        UserCart.splice(index,1);
+    }
+}
 
 async function calculaleTotal(UserCart){
-    console.log("\nshopee Cart TOTAL IS:")
+    console.log(`\nshopee  TOTAL IS:`)
 
     const result = UserCart.reduce((total, item) => total + item.subtotal(), 0);
     console.log(`${result.toFixed(2)}`);

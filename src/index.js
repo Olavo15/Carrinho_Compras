@@ -1,6 +1,7 @@
 import createItem from './service/item.js';
 import * as cartService from './service/cart.js';
 
+const carts = ['cart', 'myWhishList']
 const  cart = [];
 const myWhishList = [];
 
@@ -14,11 +15,14 @@ await cartService.addItem(cart, item1);
 await cartService.addItem(myWhishList, item2);
 await cartService.addItem(myWhishList, item3);
 
+await cartService.removeItem(cart, 0);
+await cartService.removeItem(myWhishList, 1);
+
 await cartService.displaycart(cart);
 await cartService.displaycart(myWhishList);
 
 // await cartService.deleteItem(myWhishList, item3.name)
 
-console.log("Shopee cart TOTAL IS:");
+
 await cartService.calculaleTotal(cart);
 await cartService.calculaleTotal(myWhishList);
