@@ -12,12 +12,14 @@ async function deleteItem(UserCart, name){
 async function removeItem(UserCart, index){}
 
 async function calculaleTotal(UserCart){
+    console.log("\nshopee Cart TOTAL IS:")
+
     const result = UserCart.reduce((total, item) => total + item.subtotal(), 0);
-    console.log(result.toFixed(2));
+    console.log(`${result.toFixed(2)}`);
 }
 
 async function displaycart(UserCart){
-    console.log("shopee cart list:")
+    console.log("\nshopee cart list:")
     UserCart.forEach((item, index) => {
         console.log(`${index + 1}. ${item.name} - R$ ${item.price}| 
                     ${item.quantity} |Subtotal = ${item.subtotal().toFixed(2)}`);
