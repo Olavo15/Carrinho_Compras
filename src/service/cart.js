@@ -9,13 +9,29 @@ async function deleteItem(UserCart, name){
     }
 }
 
-async function removeItem(UserCart, index){
+async function ExcluirItem(UserCart, index){
     const deleteIndex = index - 1;
 
     if(index >= 0 && index < UserCart.length){
         UserCart.splice(index,1);
     }
 }
+
+async function removeItem(UserCart, item) {
+    const indexFound = UserCart.findIndex((p) => p.name === item.name);
+
+    if (indexFound === -1) {
+        console.log("Item não encontrado");
+        return;
+    }
+
+    if (UserCart[indexFound].quantity > 1) {
+        UserCart[indexFound].quantity -= 1;
+    } else {
+        UserCart.splice(indexFound, 1);
+    }
+}
+
 
 async function calculaleTotal(UserCart){
     console.log(`\nshopee  TOTAL IS:`)
@@ -38,4 +54,5 @@ export{
     removeItem,
     calculaleTotal,
     displaycart,
+    ExcluirItem,
 }
